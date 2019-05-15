@@ -1,0 +1,466 @@
+.mini .banner {z-index:97 !important; }
+.mini #anchoBanner {z-index:97 !important; }
+.mini .botones {z-index: 97 !important;}
+
+.elipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+}
+
+.ui-autocomplete { max-width: 605px; }
+
+.modalInner { padding: 35px; }
+
+/*.menuBancoDatos { width: 163px; float: left; }*/
+.menuBancoDatos { text-align: left; float: left; width: 100%; }
+/* .menuBancoDatos li.first { width: 342px; float: left; }
+.menuBancoDatos li.second { width: 327px; float: left; }
+.menuBancoDatos li.last { width: 311px; float:left; } */
+
+.menuBancoDatos .cabeceraSelected { background-color: #3b515c; padding-top: 10px; padding-bottom:10px; margin-bottom: 0px; padding-left:10px; color: #FFF; font-weight: bold;}
+.menuBancoDatos .cabecera { background-color: #76a1b8; padding-top: 10px; padding-bottom:10px; padding-left:10px; color: #FFF; font-weight: bold;}
+.menuBancoDatos .option{ text-align: left; border: solid 1px #76a1b8; height:180px; background: #FFF no-repeat scroll center center; font-size: 27px; color: #000; font-family: aodRoboto; font-weight: bold; cursor:pointer; }
+.menuBancoDatos .optionOneLine { line-height: 100px; }
+.menuBancoDatos .optionTwoLines { line-height: 40px; }
+.menuBancoDatos .optionThreeLines { line-height: 26px; }
+.menuBancoDatos .optionSelected { background-color: #EAF1F4; }
+.menuBancoDatos .pie { text-align: left; padding: 10px; border-top: solid 1px #76a1b8; border-bottom: solid 1px #76a1b8; border-left: solid 1px #76a1b8; border-right: solid 1px #76a1b8; line-height: 10px; font-family: aodRoboto; font-weight: bold;}
+
+.menuBancoDatos .optionResumen { padding-left: 15%; padding-right: 5%; padding-top: 5%; height:130px; }
+.menuBancoDatos .optionDetalle { text-align: left; background: none; font-size: 12px; line-height: 14px; position:relative; top:-145px; height: 185px; }
+.menuBancoDatos .optionDetalleTexto { position: absolute; bottom: 0px; border-top: dotted 1px #76a1b8; padding-left: 10px; height: 25px; padding-right: 10px; }
+.menuBancoDatos .optionDetalleTextoOneLine { line-height: 28px; }
+.menuBancoDatos .optionDetalleTextoTwoLines { line-height: 14px; }
+
+#dondeOption { background-image: url("/static/public/aragopedia/i/13-Icon-Donde-Positivo.png"); }
+#queOption { background-image: url("/static/public/aragopedia/i/15-Icon-Que-Positivo.png"); }
+#cuandoOption { background-image: url("/static/public/aragopedia/i/17-Icon-Cuando-Positivo.png"); }
+#dondeOption.optionSelected { background-image: url("/static/public/aragopedia/i/14-Icon-Donde-Negativo.png"); }
+#queOption.optionSelected { background-image: url("/static/public/aragopedia/i/16-Icon-Que-Negativo.png"); }
+#cuandoOption.optionSelected { background-image: url("/static/public/aragopedia/i/18-Icon-Cuando-Negativo.png"); }
+
+#que { margin-right: 30px; }
+#donde { margin-right: 30px; }
+#cuando { margin-right: 0px; }
+
+.resultsTableBDA { width:100%; }
+th.resultBDA{text-align: left !important; font-weight: bold; font-family: 'aodTextos', 'Roboto' !important; font-size: 14px !important; text-align: justify !important; line-height: 21px !important;}
+#resultsTableBDA th { background-position: center left; }
+td.resultBDA { background-color: #EAF1F4; border-top: solid 1px #9FBDCD; border-bottom: solid 1px #9FBDCD; color: #3B515C !important; font-weight: bold; font-family: 'aodTextos', 'Roboto' !important; font-size: 14px !important; text-align: justify !important; line-height: 21px !important; padding-left: 5px;}
+td.resultDonde { border-right: solid 3px #FFF; text-align: left; padding-left: 15px;}
+td.resultQue { border-right: solid 3px #FFF; text-align: left; padding-left: 15px;}
+td.resultCuando { border-right: solid 3px #FFF; text-align: center; }
+td.resultBDA_value { text-align: center; }
+
+.downloadZone { float:right; }
+#iconDownload { padding-top: 13px; padding-right: 8px; }
+ul.downloadFormat { float:right; padding-top: 15px; }
+ul.downloadFormat li { float:left; }
+ul.downloadFormat li a { border-bottom: solid 1px #76A1B8; border-top: solid 1px #76A1B8; border-right: solid 1px #76A1B8; padding-top:9px; padding-bottom:9px; font-size: 11px; line-height:28px; padding-left:4px; padding-right:4px; }
+ul.downloadFormat li.first a { border-left: solid 1px #76A1B8; }
+ul.downloadFormat li a:hover { color: #FFF !important; padding-bottom: 9px; padding-top: 9px;}
+
+#dondeProvinciaItems, #dondeComarcaItems, #dondeMunicipioItems { padding-top: 15px; float: left; }
+
+ul.dondeTypes{ float:left; /*width: 100%;*/}
+ul.dondeTypes li { float:left; }
+/*#dondeZone li { float:left; }*/
+/*#dondeZone li.selected { font-weight: bold; color: #000; }*/
+ul.dondeTypes li.type { background-color: #76A1B8; color: #FFF; width:158px; margin-right: 3px; margin-bottom: 3px; font-family: aodRoboto; font-weight: bold; line-height: 30px; font-size: 15px; text-align: left; text-indent: 10px; cursor: pointer;}
+ul.dondeTypes li.lastType { width: 157px; margin-right: 0px;}
+ul.dondeTypes li.selected { background-color: #3b515c; }
+#dondeZone .preview { border: solid 1px #76A1B8; color: #76A1B8; background-color: #FFF; float: right; text-align: center; text-indent: 0px; width: 306px; font-family: aodRoboto; font-weight: bold; line-height: 28px; font-size: 15px; font-weight: bold; }
+
+ul.dondeProvinciaType li { float:left; cursor: pointer; }
+ul.dondeProvinciaType li.typeProvincia { border: solid 1px #76A1B8; color: #76A1B8; background-color: #FFF; width:210px; margin-right: 3px solid #FFF;font-family: aodRoboto; font-weight: bold; line-height: 30px; font-size: 15px; text-align: left; text-indent: 10px; margin-right: 3px; }
+ul.dondeProvinciaType li.selected { background-color: #3b515c; color: #FFF; }
+ul.dondeProvinciaType li.lastProvinciaType { margin-right: 0px;}
+
+.titleBDAZone { font-family: aodRoboto; font-weight: bold; font-size: 28px; float:left; line-height:28px; color: #76A1B8; padding-bottom: 45px; }
+.subtitleBDAZone { font-family: aodRoboto; font-weight: bold; font-size: 14px; float:left; line-height:14px; color: #76A1B8;}
+.huecoGrandeInicioPagina {padding-top: 45px; /*clear: both; */}
+
+.mapZonePreview { float: right; width: 306px; }
+.mapPreview { height: 436px; }
+
+ul.dondeComarcaType { float:left; height: 316px; width: 330px; }
+ul.dondeComarcaType li { color: #76A1B8; float: none; text-align: left; cursor: pointer; line-height: 20px; font-size: 14px; }
+
+.directorioMunicipios { font-family: aodRoboto; font-weight: bold; font-size: 16px; float:left; line-height:16px; color: #76A1B8; text-align: left; clear: left; /*margin-top: 30px; margin-bottom: 10px; width: 644px;*/ }
+#dondeComarcaItems .selected { color: #3b515c; font-weight: bold; }
+.directorioMunicipios .selected { color: #3b515c; font-weight: bold; }
+.directorioMunicipios li { padding-right: 3px; float:left; margin-bottom: 10px; }
+.directorioMunicipiosTitle { float: left; }
+.directorioMunicipios .comboFiltro { color: #000; font-size: 14px; line-height: 26px; }
+#toggleDirectorioImg { cursor: pointer; }
+ul.comboFiltro { float: left; }
+.dondeMuniInitialType { clear: left; /*padding-top:20px;*/}
+.dondeMuniInitialType li { cursor: pointer; float:left; }
+ul.dondeMunicipioType { float:left; max-height: 466px; width: 165px; }
+ul.dondeMunicipioType li { color: #76A1B8; float: none; text-align: left; cursor: pointer; line-height: 20px; font-size: 14px; }
+ul.dondeMunicipioType li.selected { color: #3b515c; font-weight: bold; }
+#dondeMunicipioItemsOptions { clear: left; padding-top: 15px; max-width: 660px; }
+.dondeMunicipioItemsOptions_2columns { max-width: 330px; float: left; }
+
+.dondeBottomLinks a { font-size: 14px; }
+
+#textoMuni { float: left; width: 644px; }
+
+.infoAboutSelectionSummary { text-align: left; background: rgb(255, 255, 255) none no-repeat scroll center center; font-size: 20px; color: rgb(0, 0, 0); font-family: aodRoboto; font-weight: bold; padding: 20px;}
+.infoAboutSelectionSummary .detail { font-size: 12px; padding-top: 10px; padding-bottom: 10px; }
+.infoAboutSelectionSummary .nota { font-size: 10px; color: #888; font-style: italic; }
+.infoAboutSelectionDetail { border: 1px solid rgb(118, 161, 184); height: 125px; background: rgb(255, 255, 255) none no-repeat scroll center center; font-size: 12px; color: rgb(0, 0, 0); font-family: aodRoboto; font-weight: bold; padding: 15px; overflow: auto; margin-right: 25px; margin-left: 18px; }
+.infoAboutSelectionDetail ul { width: 225px; }
+.infoAboutSelectionDetail li { float: none; text-align: left; cursor: pointer; }
+
+.selCondicionada { margin-top: 30px; float: left; clear:left; width: 640px; margin-bottom: 30px; }
+.greyBtn { color: #FFF; background-color: #A2A09B; text-align: center; font-family: aodRoboto; font-weight: bold; line-height: 30px; font-size: 15px; }
+.selCondicionadaBtn { width: 321px; float: left; }
+.addCondition { width: 310px; float: left; cursor: pointer; color: #FFF; background-color: #76A1B8; text-align: center; font-family: aodRoboto; font-weight: bold; line-height: 30px; font-size: 15px; }
+.removeCondition { float: right; color: #76A1B8; font-family: aodRoboto; font-weight: bold; font-size: 20px; cursor: pointer; position: relative; top: -20px; right: -20px;}
+.selCondicionadaText { margin-left: 30px; float: left; font-size: 10px; text-align: left; line-height: 14px; color: #A2A09B; }
+.aplicar { float: right; width: 310px; background-color: #999790; color: #FFF; font-family: aodRoboto; font-weight: bold; line-height: 30px; font-size: 15px; text-align: center; /*margin-top: 30px; */ cursor: pointer; }
+
+.dondeSeleccionCondicionadaQuestion { float: left; clear: left; padding-top: 20px; font-size: 10px; padding-bottom: 20px; }
+.dondeSeleccionCondicionadaQuestion select {font-size: 10px; }
+.dondeSeleccionCondicionadaQuestion p {float: left; padding-right: 10px; }
+.dondeSeleccionCondicionadaQuestion div {float: left; }
+.dondeSeleccionCondicionadaItems { /*width: 580px; */ clear:left; text-align: left; float:left; }
+.themeBlock { border-bottom: 1px solid rgb(118, 161, 184); border-left: 1px solid rgb(118, 161, 184); border-right: 1px solid rgb(118, 161, 184); padding: 30px; width: 580px; float: left; clear:left;}
+.themeBlockFirst { border-top: 1px solid rgb(118, 161, 184); }
+#conditionZone li { float: none; }
+.dimensionTitle { padding-bottom:10px; }
+.dimensionText { width: 231px; float: left; padding-top: 5px; }
+.dimensionOperator { float: left; width: 140px; }
+.dimensionValues { width: 194px; }
+.activateDeactivateZone { }
+.activateDeactivateZone ul { float:left; width: 165px; }
+.activateDeactivateZone li { text-align: left; padding-right: 5px; color: #76A1B8; cursor: pointer; line-height: 14px; font-size: 12px; height: 32px; }
+#applyDeacActivateAll { padding-left:10px; padding-right: 10px; margin-left: 15px; cursor: pointer; }
+#comboDeacActivateAll, #comboFiltroUnidadTerritorial { width: 120px; font-size: 12px; }
+
+ul.yearInterval { float: left; margin-bottom: 30px; }
+.yearInterval li { float: left; }
+.headText { font-family: aodRoboto; font-weight: bold; font-size: 12px; float:left; line-height:16px; color: #76A1B8; text-align: left; clear: left; margin-bottom: 20px; text-transform: uppercase; padding-right: 15px;}
+#cuandoZone .comboFiltro { color: #000; font-size: 14px; line-height: 30px; margin-bottom: 30px; float: left; }
+#cuandoZone .comboFiltroBig { width: 172px; clear:left; }
+#cuandoZone .comboFiltroSmall { width: 90px; }
+.boton { height: 30px; text-transform: uppercase; text-align: center; text-weight: bold; font-family: aodRoboto; font-weight: bold; line-height: 30px; }
+.botonCuando { clear: left; width: 250px;}
+.botonNormal { background-color: #76a1b8; color: #FFFFFF; }
+.botonOver { background-color: #3b515c; color: #FFFFFF; cursor: pointer; }
+.botonClicked { background-color: #3b515c; color: #76a1b8; cursor: pointer; }
+
+ul.queOpciones { float: left; padding-top: 15px; padding-bottom: 15px; }
+.queOpciones li { float: left; padding-right: 30px; padding-bottom: 30px; }
+
+#queReportTree ul { margin-top: 0px; }
+
+ul.cuandoOpciones { float:left; margin-bottom: 30px; }
+.cuandoOpciones li { float:left; }
+li.cuandoOpcion, li.queOpcion{ width: 240px; }
+li.cuandoOpcion a { padding-right: 10px; }
+.blockInnerCuando { /*height: 180px;*/ }
+#titleAvailableQue { }
+.informeAutocomplete { border: 1px solid rgb(118, 161, 184); width: 309px; margin-right: 3px; float:left; height: 28px; padding-left: 10px; background-image: url(/static/public/i/lupa.jpg); background-repeat: no-repeat; background-position: right center; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.botonQue { border: 1px solid rgb(118, 161, 184); width: 309px; float:left; height: 28px; padding-left: 5px; padding-right: 5px; }
+#queItems { width: 100%; text-align: left; }
+ul.infoQue { float: left; }
+.infoQue li { float: left; padding-right: 10px; }
+.paddLeft20 { padding-left: 20px; }
+
+#titlePreview { float: left; width: 85%; text-align: left; }
+#hierarchyPreview { color: #A2A09B; font-style: italic; float:left; clear:left; text-align: justify; padding-top: 15px; }
+/*
+#dondeSeleccionCondicionadaType_chosen,#dondeSeleccionCondicionadaType_chosen .chosen-drop{width:150px !important;}
+#dondeSeleccionCondicionadaLogical_chosen,#dondeSeleccionCondicionadaLogical_chosen .chosen-drop{width:150px !important;}.dondeSeleccionCondicionadaQuestion{display: inline-flex;}
+*/
+.ui-autocomplete.ui-menu{z-index:99999 !important; background-color: #FFF; cursor: pointer;}
+li.ui-menu-item{margin-bottom: 5px;}
+.chosen-container{ margin-bottom: 10px; }
+.chosen-container.chosen-container-single.chosen-container-single-nosearch, .chosen-drop, input.dimensionValues{width:121px !important; margin-right: 15px; }
+input.dimensionValues{height: 25px;}
+.chosen-container.chosen-container-single.chosen-container-single-nosearch{width:125px !important;}
+.chosen-container { width: 125px !important;}
+.chosen-results{ width: 125px !important;}
+.chosen-container.chosen-container-single.chosen-container-single-nosearch.chosen-with-drop.chosen-container-active, .chosen-container.chosen-with-drop .chosen-drop {width:125px !important;}
+
+text.tooltipMap, tspan.tooltipMap {
+	font-family: 'aodRoboto', 'Roboto';
+  font-size: 14px;
+  pointer-events: none;
+	font-weight: bold;
+}
+
+/* Parte correspondiente al apartado de la parte responsive */
+@media screen and (min-width:320px) and (max-width: 1024px){
+	.menuBancoDatos {
+		text-align:center !important;
+	}
+	.menuBancoDatos li {
+		padding-bottom: 30px;
+	}
+	#donde, #que, #cuando {
+		margin-left: 0px;
+	  	margin-right: 0px;
+	}
+}
+@media screen and (min-width:860px) and (max-width: 1024px){
+	.menuBancoDatos li {
+		padding-right: 10%;
+		padding-left:10%;
+	}
+	.mapZonePreview {
+	    width: 325px;
+	}
+}
+@media screen and (min-width:750px) and (max-width: 859px){
+	.menuBancoDatos li {
+		padding-right: 10%;
+		padding-left: 10%;
+	}
+}
+@media screen and (min-width:480px) and (max-width: 749px){
+	.menuBancoDatos li {
+		padding-right: 15%;
+		padding-left:15%;
+	}
+}
+
+@media screen and (min-width:750px) and (max-width: 1024px){
+	#dondeProvinciaItems .themeBlock{
+		width:600px;
+	}
+}
+
+@media screen and (max-width: 749px){
+	.removeCondition{
+		right: 0px;
+	}
+}
+
+@media screen and (min-width:675px) and (max-width: 749px){
+	#dondeProvinciaItems .themeBlock{
+		width:580px;
+		padding-right: 10px !important;
+		padding-left: 10px !important;
+	}
+}
+
+@media screen and (min-width:600px) and (max-width: 674px){
+	#dondeProvinciaItems .themeBlock{
+		width:450px;
+		padding-right: 5px !important;
+		padding-left: 5px !important;
+	}
+}
+
+@media screen and (min-width:500px) and (max-width: 599px){
+	#dondeProvinciaItems .themeBlock{
+		width:400px;
+		padding-right: 5px !important;
+		padding-left: 5px !important;
+	}
+}
+
+@media screen and (min-width:400px) and (max-width: 499px){
+	#dondeProvinciaItems .themeBlock{
+		width:90%;
+		padding-right: 5px !important;
+		padding-left: 5px !important;
+	}
+	#informeAutocompleteconditionProvincia0, #informeAutocompleteconditionProvincia1, #informeAutocompleteconditionProvincia2, #informeAutocompleteconditionProvincia3, #informeAutocompleteconditionProvincia4, #informeAutocompleteconditionProvincia5, #informeAutocompleteconditionProvincia6, #informeAutocompleteconditionProvincia7, #informeAutocompleteconditionProvincia8, #informeAutocompleteconditionProvincia9{
+		width: 265px;
+	}
+}
+@media screen and (min-width:320px) and (max-width: 399px){
+	#dondeProvinciaItems .themeBlock{
+		width:220px;
+		padding-right: 5px !important;
+		padding-left: 5px !important;
+	}
+	#informeAutocompleteconditionProvincia0, #informeAutocompleteconditionProvincia1, #informeAutocompleteconditionProvincia2, #informeAutocompleteconditionProvincia3, #informeAutocompleteconditionProvincia4, #informeAutocompleteconditionProvincia5, #informeAutocompleteconditionProvincia6, #informeAutocompleteconditionProvincia7, #informeAutocompleteconditionProvincia8, #informeAutocompleteconditionProvincia9{
+		width: 210px;
+	}
+}
+
+@media screen and (max-width: 749px){
+	#dondeComarcaType2 {
+		padding-top: 25px;
+	}
+
+	, #dondeComarcaItems .themeBlock{
+		width:95%;
+	}
+
+	.selCondicionadaAdd{
+		width:90%;
+	}
+
+	.selCondicionadaAdd .aplicar{
+		margin-top: 5px;
+		float: left;
+	}
+}
+
+@media screen and (max-width: 469px){
+	.themeBlock { width: 90%; padding-left: 10px; padding-right: 10px; }
+	.ui-autocomplete { width: 90% !important; }
+	.informeAutocomplete { width: 90%; padding-right: 10px; }
+
+}
+
+@media screen and (min-width:470px) and (max-width: 749px){
+	.themeBlock { width: 320px; }
+	.ui-autocomplete { width: 320px !important; }
+}
+
+@media screen and (min-width:400px) and (max-width: 749px){
+	.addCondition { width: 320px; }
+	.aplicar { width: 320px; }
+}
+
+@media screen and (max-width: 399px){
+	.addCondition { width: 240px; }
+	.aplicar { width: 240px; }
+}
+
+@media screen and (min-width:570px) and (max-width: 749px){
+	.activateDeactivateZone { width: 460px; }
+}
+
+@media screen and (min-width:460px) and (max-width: 569px){
+	.activateDeactivateZone { width: 360px; }
+}
+
+@media screen and (max-width: 459px){
+	.activateDeactivateZone { width: 160px; }
+}
+
+@media screen and (min-width:450px) and (max-width: 749px){
+	.selCondicionadaAdd .greyBtn.addCondition{
+		width:90%;
+	}
+}
+
+@media screen and (min-width:320px) and (max-width: 449px){
+	.selCondicionadaAdd .greyBtn.addCondition{
+		width:65%;
+	}
+}
+/*
+@media screen and (max-width:674px) {
+	#dimensionsconditionProvincia0 li, #dimensionsconditionProvincia1 li, #dimensionsconditionProvincia2 li, #dimensionsconditionProvincia3 li, #dimensionsconditionProvincia4 li, #dimensionsconditionProvincia5 li, #dimensionsconditionProvincia6 li, #dimensionsconditionProvincia7 li, #dimensionsconditionProvincia8 li, #dimensionsconditionProvincia9 li{
+		display: initial !important;
+	}
+
+	#dimensionsconditionComarca0 li, #dimensionsconditionComarca1 li, #dimensionsconditionComarca2 li, #dimensionsconditionComarca3 li, #dimensionsconditionComarca4 li, #dimensionsconditionComarca5 li, #dimensionsconditionComarca6 li, #dimensionsconditionComarca7 li, #dimensionsconditionComarca8 li, #dimensionsconditionComarca9 li{
+		display: initial  !important;
+	}
+
+	#dimensionsconditionMunicipio0 li, #dimensionsconditionMunicipio1 li, #dimensionsconditionMunicipio2 li, #dimensionsconditionMunicipio3 li, #dimensionsconditionMunicipio4 li, #dimensionsconditionMunicipio5 li, #dimensionsconditionMunicipio6 li, #dimensionsconditionMunicipio7 li, #dimensionsconditionMunicipio8 li, #dimensionsconditionMunicipio9 li{
+		display: initial  !important;
+	}
+}
+
+
+@media screen and (min-width:675px) and (max-width: 764px){
+	#dimensionsconditionProvincia0 li, #dimensionsconditionProvincia1 li, #dimensionsconditionProvincia2 li, #dimensionsconditionProvincia3 li, #dimensionsconditionProvincia4 li, #dimensionsconditionProvincia5 li, #dimensionsconditionProvincia6 li, #dimensionsconditionProvincia7 li, #dimensionsconditionProvincia8 li, #dimensionsconditionProvincia9 li{
+		display: initial !important;
+	}
+
+	#dimensionsconditionComarca0 li, #dimensionsconditionComarca1 li, #dimensionsconditionComarca2 li, #dimensionsconditionComarca3 li, #dimensionsconditionComarca4 li, #dimensionsconditionComarca5 li, #dimensionsconditionComarca6 li, #dimensionsconditionComarca7 li, #dimensionsconditionComarca8 li, #dimensionsconditionComarca9 li{
+		display: initial  !important;
+	}
+
+	#dimensionsconditionMunicipio0 li, #dimensionsconditionMunicipio1 li, #dimensionsconditionMunicipio2 li, #dimensionsconditionMunicipio3 li, #dimensionsconditionMunicipio4 li, #dimensionsconditionMunicipio5 li, #dimensionsconditionMunicipio6 li, #dimensionsconditionMunicipio7 li, #dimensionsconditionMunicipio8 li, #dimensionsconditionMunicipio9 li{
+		display: initial  !important;
+	}
+}
+*/
+
+@media screen and (min-width:320px) and (max-width: 479px){
+	ul.dondeTypes li.lastType {
+	    width: 158px;
+	    margin-right: 3px;
+	}
+}
+
+@media screen and (min-width:320px) and (max-width: 399px){
+	#dondeMunicipioItemsOptions {
+		max-width: 220px;
+	}
+
+}
+
+@media screen and (min-width:400px) and (max-width: 746px){
+	.dondeMunicipioItemsOptions_2columns {
+		max-width: 165px;
+	}
+
+	#dondeMunicipioItemsOptions {
+		max-width: 330px;
+	}
+
+	.botonQue{
+		margin-top: :10px;
+		max-width: 333px
+		width:100%;
+	}
+}
+
+@media screen and (max-width:400px) {
+	.botonQue, .informeAutocomplete {
+		/*max-width: 309px;*/
+		width: 90%;
+		padding-right: 10px;
+	}	
+}
+
+@media screen and (max-width:920px) {
+	ul.queOpciones {
+		width: 240px;
+	}
+}
+
+@media screen and (max-width: 409px) {
+	.selCondicionada { width: 240px; }
+}
+@media screen and (min-width:410px) and (max-width: 509px) {
+	.selCondicionada { width: 340px; }
+}
+@media screen and (min-width:510px) and (max-width: 609px) {
+	.selCondicionada { width: 440px; }
+}
+@media screen and (min-width:610px) and (max-width: 709px) {
+	.selCondicionada { width: 540px; }
+}
+				
+.descripcionTitulo1_mini {
+	font-size: 20px;
+}
+
+@media screen and (max-width: 400px) {
+	.modalInner { padding: 15px; }
+}
+
+a{
+	text-decoration: underline;
+}
+
+@media screen and (max-width: 1241px) {
+	.menuBancoDatos .option {
+		font-size: 20px;
+	}
+}
+
+#resultsListAragopedia {
+    cursor: default;
+    width: 309px;
+    visibility: visible;
+    text-align: left;
+    float: left;
+    white-space: nowrap;
+}

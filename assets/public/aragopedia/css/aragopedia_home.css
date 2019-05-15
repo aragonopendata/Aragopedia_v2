@@ -1,0 +1,281 @@
+
+.pagina{
+	font-family: 'aodRoboto', sans-serif;
+	line-height: 1.2;
+	color: #594C4F;
+}
+
+.pagina h2{
+	font-weight: 600;
+	font-family: 'aodRoboto', sans-serif !important;
+}
+
+footer .trescol_child .eur-logo .txt-eur-logo .normal-txt-eur{
+	margin-top: 0;
+	margin-bottom:0;
+}
+
+footer .trescol_child .eur-logo .img-eur-logo {
+	margin-bottom: 0.5rem;
+}
+
+footer .trescol_child .eur-logo .txt-eur-logo .italic-txt-eur {
+	margin-top: 0.2rem;
+}
+
+footer .imgn {
+	margin-bottom: 0.5rem;
+}
+
+footer h3{
+	font-family:"Roboto",-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+	margin-top: 0.3rem;
+}
+
+footer a {
+    color: #5ea2ba !important;
+    cursor: pointer;
+}
+
+footer a:hover {
+    color: black !important;
+}
+
+.searchInput {
+	border: 1px solid rgb(118, 161, 184);
+	width: 321px;
+	margin-right: 3px;
+	height: 28px;
+	background-image: url(/static/public/i/lupa.jpg);
+	background-repeat: no-repeat;
+	background-position: right center;
+	padding-left: 3px;
+}
+
+.contenido {
+	width: 100%;
+	overflow: hidden;
+}
+
+.txtDescripcionAragoPedia{
+	float: left;
+	padding-top: 30px;
+}
+
+#infowiki {
+	float: left;
+	color: #76a1b8;
+	text-align: left;
+}
+
+div#simpleSearch button#searchButton {
+  background-image: url(/static/public/i/lupa.jpg) !important;
+  height: 30px;
+  margin-top: 2px;
+  width: 25px;
+  padding: 0;
+  padding-top: .3em;
+  padding-bottom: .2em;
+  padding-right: .4em;
+  margin: 0;
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+ul.twoColumns {
+	float: left;
+	position: relative;
+	left: 50%;
+}
+
+ul.twoColumns a:hover {
+	text-decoration: none;
+}
+
+.twoColumns li {
+	width: 459px;
+	float: left;
+}
+
+.twoColumns li.block {
+	position: relative;
+	right: 50%;
+	margin-top: 30px;
+}
+
+.twoColumns li.first {
+	border-right: 1px solid rgb(118, 161, 184);
+	padding-right: 30px;
+}
+
+.twoColumns li.last {
+	padding-left: 30px;
+}
+
+.txtIntro {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+ul.blocksBancoDatos {
+	float: left;
+}
+
+.blocksBancoDatos li {
+	float: left;
+	width: 460px;
+	height: 145px;
+	border-bottom: 3px solid #FFF;
+	cursor: pointer;
+	background-position: 0px -20px;
+	margin-right: 3px;
+}
+
+.contenido a{
+	color: #5ea2ba !important;
+}
+
+.contenido a:hover {
+	color:#000000;
+	text-decoration: none;
+}
+
+.list-inline-item{
+	border-bottom: 7px solid #FFF;
+}
+
+/*#dondeImg {
+  background-image: url(/static/public/aragopedia/i/09-Caja-Donde-Home.jpg);  background-repeat: no-repeat;
+}
+#queImg {
+  background-image: url(/static/public/aragopedia/i/10-Caja-Que-Home.jpg);  background-repeat: no-repeat;
+}
+#cuandoImg {
+  background-image: url(/static/public/aragopedia/i/11-Caja-Cuando-Home.jpg);  background-repeat: no-repeat;
+}*/
+
+.mapZonePreview { float: right; width: 458px; }
+.mapPreview { height: 436px; }
+
+			/* No style rules here yet */
+
+text.tooltipMap, tspan.tooltipMap {
+  
+font-family: 'aodRoboto', sans-serif;
+  font-size: 14px;
+  pointer-events: none;
+	font-weight: bold;
+}
+
+@media screen and (min-width: 1525px) and (max-width: 1748px){
+	.imagenAragopediaDatos {
+		width: 400px;
+	}
+
+}
+@media screen and (min-width: 1300px) and (max-width: 1525px){
+	.imagenAragopediaDatos {
+		width: 340px;
+	}
+
+}
+@media screen and (min-width: 1150px) and (max-width: 1300px){
+	.imagenAragopediaDatos {
+		width: 300px;
+	}
+
+}
+
+@media screen and (min-width: 1030px) and (max-width: 1150px){
+	.imagenAragopediaDatos {
+		width: 260px;
+	}
+
+}
+
+@media screen and (max-width: 1030px){
+	.imagenAragopediaDatos {
+		width: 250px;
+	}
+
+}
+
+/*@media screen and (min-width: 770px) and (max-width: 1024px){
+	.blocksBancoDatos li {
+		background-position: -56px -20px;
+		width: 348px;
+	}
+
+	.mapZonePreview {
+	  width: 348px;
+	}
+
+	ul.twoColumns {
+		width: 770px;
+	}
+
+	.twoColumns li {
+		width: 348px;
+	}
+}
+
+@media screen and (max-width: 769px){
+	.blocksBancoDatos li {
+		background-position: -70px -20px;
+		width: 320px;
+	}
+
+	.mapZonePreview {
+	  width: 320px;
+	}
+
+	ul.twoColumns {
+		width: 320px;
+	}
+
+	.twoColumns li {
+		width: 320px;
+	}
+
+	.twoColumns li.first {
+		border-right: 0px;
+	}
+	.twoColumns li.last {
+		padding-left: 0px;
+	}
+}*/
+
+.block a {
+    display: inline-block;
+    color: #5ea2ba !important;
+}
+
+.block a:hover {
+    color:#000000;
+    text-decoration:none;
+}
+
+.textosNormales a {
+    display: inline-block;
+    color: #5ea2ba !important;
+}
+
+.textosNormales a:hover {
+    color:#000000;
+    text-decoration:none;
+}
+
+.textosNormales a:after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 0;
+    transition: all .3s ease;
+    border-bottom: 1px solid #5ea2ba;
+    padding-top: 1px;
+}
+
+.textosNormales a:hover:after {
+    width: 100%;
+}
