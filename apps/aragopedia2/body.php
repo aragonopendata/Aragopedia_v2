@@ -49,7 +49,7 @@
 					<div class="cabecera titulosSecundariosNegritas">CUÁNDO</div>
 					<div class="option" id="cuandoOption" onclick="javascript:activateOption('cuando');">
 						<div class="optionResumen optionOneLine elipsis " id="cuandoOptionResumen">
-							1996 - 2018
+							1996 - 2019
 						</div>
 						<div class="optionDetalle oculto" id="cuandoOptionDetalle">
 							<div class="optionDetalleTexto" id="cuandoOptionDetalleTexto"></div>
@@ -505,6 +505,9 @@
 			<div id="cuandoZone"  class="remodal" data-remodal-id="cuandoZoneModal" role="dialog">
 				<div class="modalInner">
 
+				<!--<button data-remodal-action="close" class="remodal-close remodal-close-top" aria-label="Close"></button>
+				<button data-remodal-action="close" class="remodal-close remodal-close-bottom" aria-label="Close"></button>-->
+
 					<div class="titleBDAZone">CUÁNDO
 						<button data-remodal-action="close" class="aplybutton">Aplica y Cierra</button>
 					</div>
@@ -542,6 +545,7 @@
 								<option value="2016">2016</option>
 								<option value="2017">2017</option>
 								<option value="2018">2018</option>
+								<option value="2019">2019</option>
 							</select>
 						</li>
 						<li>
@@ -569,18 +573,19 @@
 								<option value="2015">2015</option>
 								<option value="2016">2016</option>
 								<option value="2017">2017</option>
-								<option value="2018" selected>2018</option>
+								<option value="2018">2018</option>
+								<option value="2019" selected>2019</option>
 							</select>
 						</li>
 					</ul>
 					<ul class="cuandoOpciones textosNormales">
 						<li class="cuandoOpcion">
 							<a href="javascript:selectAllAvailableYears()" title="Todos los datos" class="i_i">Todos los datos</a>
-							<div id="cuandoAllYears" class="i_i">(1996 - 2018)</div>
+							<div id="cuandoAllYears" class="i_i">(1996 - 2019)</div>
 						</li>
 						<li class="cuandoOpcion">
 							<a href="javascript:selectLastAvailableYear()" title="El &uacute;ltimo a&ntilde;o disponible" class="i_i">El &uacute;ltimo a&ntilde;o disponible</a>
-							<div id="cuandoLastYear" class="i_i">(2018)</div>
+							<div id="cuandoLastYear" class="i_i">(2019)</div>
 						</li>
 					</ul>
 				</div>
