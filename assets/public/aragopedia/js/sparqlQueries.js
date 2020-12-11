@@ -37,7 +37,7 @@ function selectedReport(idx, item, id) {
 						query += "?obs0 <http://purl.org/linked-data/sdmx/2009/dimension#refPeriod> ?value\n";
 						query += "}}\n";
 						query += "ORDER BY DESC(?value)";
-
+						console.log(query);
 						var queryUrl = urlSparqlEndpoint + "?default-graph-uri=&query="+ encodeURIComponent(query) + "&format=json";
 						$.ajax({
 							url: queryUrl,
@@ -65,11 +65,13 @@ function selectedReport(idx, item, id) {
 												str += "<option value='" + valueRefPeriod + "'>" + valueRefPeriod + "</option>";
 											});
 										}
+						//			parseResultsSparqlQuery(data.results.bindings);
 								}
 						});
 						str += "</select>";
 						str += "</li>";
 					} else if (item != "http://opendata.aragon.es/def/iaest/dimension#mes-y-ano") {
+									console.log(item)
 						str += "<li class='i_i'><div class='dimensionText textosNormales'>" + item.label + "</div>";
 						// TODO: Check si es necesario?
 						str += "<input hidden class='dimensionId' value = '" + item._about + "'>";
@@ -82,9 +84,11 @@ function selectedReport(idx, item, id) {
 							str += "</select>";
 							str += "<select class='dimensionValues'>";
 							var urlCodeList = item["qb_codeList"]._about + ".json?api_key=9557f4fc4e0de71125e3d1959490b28b";
+							//var urlCodeList = item["qb:codeList"] + ".json";
 							urlCodeList = urlCodeList.replace("opendata.aragon.es", document.location.host);
 							urlCodeList = urlCodeList.replace("http", "https");
-
+							//urlCodeList = urlCodeList.replace("alzir.dia.fi.upm.es", "localhost");
+							console.log('url: ' + urlCodeList);
 							$.ajax({
 								url:urlCodeList,
 								async: false,
@@ -147,6 +151,12 @@ function selectedReport(idx, item, id) {
 			if ($("select.dimensionValues").length > 0){
 				$("select.dimensionValues").chosen(config).chosen();
 			}
+			/*if ($(".dimensionId").length > 0){
+				$(".dimensionId").chosen(config).chosenImage();
+			}
+			if ($(".dimensionType").length > 0){
+				$(".dimensionType").chosen(config).chosenImage();
+			}*/
 		}
 	});
 }
@@ -196,7 +206,9 @@ function applyCondicionada() {
 						// Measure
 					currentValue = this.childNodes[5].value;
 				}
-
+				// if (currentValue == "") {
+				// 	error = true;
+				// }
 				if (currentOperator != "%" && isEmpty(!currentValue)) {
 					filters = filters + 1;
 					query += "?obs" + pos + " <" + currentId + "> ?value" + autoNum + " .\n";
@@ -219,10 +231,12 @@ function applyCondicionada() {
 		query += "}";
 	}
 	query += "} LIMIT 2000\n";
+	console.log(filters);
 	if (filters < 2) {
 		error = true;
 	}
 	if (! error) {
+		console.log(query);
 		var queryUrl = urlSparqlEndpoint + "?default-graph-uri=&query="+ encodeURIComponent(query) + "&format=json";
 
 		showModalWaiting2();		
@@ -237,7 +251,8 @@ function applyCondicionada() {
 			}
 		});
 	} else {
-		alertDialogModal("Rellene todos los valores", "Error");
+		console.log(query);
+		alertDialogModal("Rellene al menos un filtro", "Error");
 	}
 }
 
@@ -287,14 +302,14 @@ function correctWord(str, word) {
 
 function correctWordInverse(name, word) {
 	var str = name;
-
+	
 	if (!String.prototype.startsWith) {
 		String.prototype.startsWith = function(searchString, position) {
 		  position = position || 0;
 		  return this.indexOf(searchString, position) === position;
 		};
 	}
-	
+
 	if (str.startsWith(word + " ")) {
 		return str.replace(new RegExp(word + ' ', 'g'), '') + " (" + word + ")";
 	} else {
@@ -341,7 +356,7 @@ function parseResultsSparqlQuery(results) {
 				if (codItem) {
 					funSelect(codItem, false);
 				} else {
-					alertDialogModal("Problema obteniendo el c�digo de " + item, "Error");
+					alertDialogModal("Problema obteniendo el código de " + item, "Error");
 				}
 			}
 		}
@@ -369,7 +384,9 @@ function getQuerySPARQL(includeLimit) {
 	} else {
 		query += 'select distinct ?refArea ?nameRefArea ?refPeriod (strafter(str(?refPeriod), "http://reference.data.gov.uk/id/year/") AS ?nameRefPeriod) ';
 	}
-
+	//console.log("DimensionList");
+	//console.log(dimensionList);
+	//console.log(dimensionList.length);
 	var dimensionList = $("#queItemsHidden").html().split("@");
 	var dimensionListRange = $("#queItemsHiddenRange").html().split("@");
 	for (var j = 0; j < dimensionList.length; j++) {
@@ -417,7 +434,9 @@ function getQuerySPARQL(includeLimit) {
 		}
 	}
 	query += ")).\n";
-	query += " ?obs <http://purl.org/linked-data/sdmx/2009/dimension#refArea> ?refArea.\n";
+	if($("#idReportQue").val() != "05-050105") {
+		query += " ?obs <http://purl.org/linked-data/sdmx/2009/dimension#refArea> ?refArea.\n";
+	}
 	query += " ?refArea rdfs:label ?nameRefArea.";
 	query += ' FILTER ( lang(?nameRefArea) = "es" ).';
 
@@ -463,15 +482,15 @@ function getQuerySPARQL(includeLimit) {
 	}
 	query += "} \n";
 	query += "ORDER BY ASC(?refArea) DESC(?refPeriod)\n";
-
 	if (includeLimit) {
 		query += "LIMIT 300\n";
 	}
-	
+	console.log(query);
 	return query;
 }
 
 function sendQuerySparql_updateTable(query, outputFormat) {
+	//var queryUrl = urlSparqlEndpoint + "?default-graph-uri=&query="+ encodeURIComponent(query) + "&format=" + outputFormat;
 	var queryUrl = urlSparqlEndpoint;
 
 	$.ajax({
@@ -501,18 +520,25 @@ function sendQuerySparql_updateTable(query, outputFormat) {
 }
 
 function sendQuerySparql_download(query, outputFormat) {
+	//var queryUrl = urlSparqlEndpoint + "?default-graph-uri=&query="+ encodeURIComponent(query) + "&format=" + outputFormat;
 	var queryUrl = urlSparqlEndpoint;
 
 	showModalWaiting2();
-	
+
+/*	var $form = $('<form method="POST" id="downloadForm" target="_blank">' +
+								'	<input id="downloadFormQuery" name="query" type="hidden"/>' +
+								' <input id="downloadFormGraph" name="default-graph-uri" type="hidden"/>' +
+								' <input id="downloadFormFormat" name="format" type="hidden"/>' +
+								'</form>').appendTo('body');
+*/
  	$('#downloadForm').attr('action', queryUrl);
 	$("#downloadFormQuery").val(query);
 	$("#downloadFormGraph").val('');
 	$("#downloadFormFormat").val(outputFormat);
 									
  	$('#downloadForm').submit();
-	
-	 hideModalWaiting2();
+ //	$('#downloadForm').remove();
+	hideModalWaiting2();
 }
 
 function getAragopediaURIfromName(itemOrig, type) {
@@ -550,6 +576,7 @@ function parseResultsSparqlQueryShowData(results, headers, labels) {
 
 	var str = "";
 	if (results.length == 0) {
+		//str = "<div class=\"textosNormales\">No hay datos que cumplan con las caracter�sticas seleccionadas</div>";
 		str += "<thead><tr>";
 		str += "<th class='resultBDA'>Foo</th>";
 		str += "</thead><tbody><tr>";
@@ -597,7 +624,35 @@ function parseResultsSparqlQueryShowData(results, headers, labels) {
 							str += "<td class='resultBDA'></td>";
 						}
 					}
-				}
+				}	/* else {				
+					var pos = results[i].refArea.value.indexOf(uriPrefix);
+					if (pos != -1) {
+						var item = results[i].refArea.value.substring(uriPrefix.length);
+						item = item.replace(new RegExp('_', 'g'), ' ');
+		 				item = item.replace(new RegExp('\/', 'g'), ' / ');
+						item = correctWord(item, "La");
+						item = correctWord(item, "El");
+						item = correctWord(item, "Las");
+						item = correctWord(item, "Los");
+						if (item == "Veracruz") {
+							item = "Beranuy";
+						}
+						if (item == "Torla") {
+							item = "Torla-Ordesa";
+						}
+						if (item == "Monflorite-Lascasas") {
+							item = "Monflorite Lascasas";
+						}
+						if (item == "Lascellas-Ponzano") {
+							item = "Lascellas Ponzano";
+						}
+						if (item != "") {
+							str += "<td class='resultBDA'>" + item + "</td>";
+						} else {
+							str += "<td class='resultBDA'>-</td>";
+						}
+					}
+				}*/
 			}
 			str += "</tr>";
 		}
@@ -605,6 +660,7 @@ function parseResultsSparqlQueryShowData(results, headers, labels) {
 		$("#noResults").addClass("oculto");
 		$("#resultsTableBDA").removeClass("oculto");
 	}
+	//console.log('Los datos internos de la tabla son:\n'+str);
 
 	$("#resultsTableBDA").html(str);
 	updateDataTable();

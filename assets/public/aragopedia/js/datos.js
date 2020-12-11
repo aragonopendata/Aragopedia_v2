@@ -252,7 +252,7 @@ function updateTemporalAvailability(idReport) {
 	query += "}}\n";
 	query += "ORDER BY DESC(?value)";
 	var queryUrl = urlSparqlEndpoint + "?default-graph-uri=&query="+ encodeURIComponent(query) + "&format=json";
-
+	console.log(query);
 	$.ajax({
 		url: queryUrl,
 		async: false,
@@ -291,8 +291,10 @@ function showDirectorioReports() {
 	var str = "";
 
 	if (! reportTreeLoaded) {
+				//http://localhost:8983/solr/informesIAEST/select?q=*&group=on&group.field=DescripcionConJerarquia&rows=1000&omitHeader=true&wt=json
 		showModalWaiting2();
 		$.ajax({
+			//url: urlSolr + "?q=*&group=on&group.field=DescripcionConJerarquia&rows=1000&omitHeader=true&wt=json",
 			url: urlSolr + "?q=*&rows=2000&omitHeader=true&wt=json",
 			async: false,
 			complete: function( data ) {
@@ -311,6 +313,12 @@ function showDirectorioReports() {
 	}
 	$("#quePredefinedZone").fadeOut();
 	$("#queReportTreeZone").fadeIn();
+
+/*	
+	"<ul class=\"cd-accordion-menu animated\">"+str+"</ul>");
+	}
+	$("#queItems").addClass("oculto");
+	$("#queDirectorio").removeClass("oculto");*/
 }
 
 function returnPredefinedQue() {
@@ -352,6 +360,7 @@ function fromNameToID(name){
 function getDirectoryItems(arr) {
 	var str = "";
 	if (arr['count'] > 0) {
+		//str += "<ul style='list-style:disc; padding-left: 20px;text-align:left;'>";
 		for (i in arr) {
 			if ((i != "count")
 			   && (i != "desc")
@@ -364,6 +373,7 @@ function getDirectoryItems(arr) {
 					idDeI=fromNameToID(i)
 					str += '<li class="has-children">	<input type="checkbox" name ="'+idDeI+'" id="'+idDeI+'" ><label for="'+idDeI+'">'+i+'</label><ul>';
 
+					//str += "<li>" + i + "</li>";
 					str += getDirectoryItems(arr[i]);
 				} else {
 					str += "<li><a href='javascript:selectItemDirectoryReports(\"" + arr[i]['label'] + "\", \"" + arr[i]['desc'] + "\", \"" + arr[i]['descHierarchy'] + "\", \"" + arr[i]['oper'] + "\")'>" + i + "</a></li>";
@@ -383,6 +393,7 @@ function selectItemDirectoryReports(label, desc, descHierarchy, oper) {
 						}
 	$("#queDirectorio").addClass("oculto");
 	selectedReportQue(item);
+	//dialogQueDirectorio.dialog("close");
 }
 
 var directoryReportItems = new Array();
@@ -398,6 +409,7 @@ function addDirectoryReportItem(item) {
 		if (currentItem != "") {
 			if (! directoryItemsArray[currentItem]) {
 				directoryItemsArray[currentItem] = new Array();
+				//directoryItemsArray[currentItem]['_txt'] = currentItem;
 				directoryItemsArray[currentItem]['count'] = 0;
 				directoryItemsArray['count'] = directoryItemsArray['count']+1;
 				directoryItemsArray[currentItem]['desc'] = getSolrPath(item.RutaSinTipo);
@@ -415,6 +427,29 @@ function addDirectoryReportItem(item) {
 }
 
 function activateOption(id) {
+				/*
+	if (! $("#" + id + "Option").hasClass("optionSelected")) {
+		$("#dondeOption").removeClass("optionSelected");
+		$("#queOption").removeClass("optionSelected");
+		$("#cuandoOption").removeClass("optionSelected");
+		$("#dondePie").removeClass("optionSelected");
+		$("#quePie").removeClass("optionSelected");
+		$("#cuandoPie").removeClass("optionSelected");
+		
+		$("#dondeZone").addClass("oculto");
+		$("#queZone").addClass("oculto");
+		$("#cuandoZone").addClass("oculto");
+		$("#dondeZone").slideUp();
+		$("#queZone").slideUp();
+		$("#cuandoZone").slideUp();
+		$("#" + id + "Option").addClass("optionSelected");
+		$("#" + id + "Pie").addClass("optionSelected");
+		//$("#" + id + "Zone").removeClass("oculto");
+		$("#" + id + "Zone").slideDown();
+	} else {
+		// no op => already selected
+	}
+	*/
 
 	eval(id + "Modal").open();
 	if (id=="donde") {
@@ -425,6 +460,21 @@ function activateOption(id) {
 	}
 }
 
+/*
+function toggleDirectorio() {
+	if ($("#directoryShowFilter").hasClass("oculto")) {
+		$("#toggleDirectorioImg").attr("src","/public/i/ico_acordeon_up.png");
+		$("#directoryShowFilter").removeClass("oculto");
+		$("#dondeMunicipioItemsOptions").removeClass("oculto");
+		$("#directorioMunicipiosList").removeClass("oculto");
+	} else {
+		$("#toggleDirectorioImg").attr("src", "/public/i/ico_acordeon_down.png");
+		$("#directoryShowFilter").addClass("oculto");
+		$("#dondeMunicipioItemsOptions").addClass("oculto");
+		$("#directorioMunicipiosList").addClass("oculto");
+	}
+}
+*/
 function addNewConditionBlock(territorialType) {
 	addNewThemeBlock("condition" + territorialType, conditionDondeCounter[territorialType], territorialType);
 	conditionDondeCounter[territorialType] = conditionDondeCounter[territorialType] + 1;
@@ -512,6 +562,8 @@ function searchAutocompleteReport(id, funSelected) {
 				success: function( data ) {
 					response($.map(data.response.docs, function (item) {
 						return {
+							//label: item.DESCRIPCION,
+							//value: item.DIRWEB
 							label: item.DescripcionMejorada,
 							value: item.DescripcionMejorada,
 							descHierarchy: item.DescripcionConJerarquia,
@@ -760,6 +812,11 @@ function createSliderDirectorioMunicipio() {
 	}
 }
 
+
+/*
+	var columnNumber = 1;
+	var itemCount = 0;
+*/
 function updateListComarca() {
 	var str = "";
 	var columnNumber = 1;
@@ -784,8 +841,15 @@ function updateListComarca() {
 	}
 }
 
+/*
+function activateAllItems() {
+	var territorialUnit = $("#comboActivateAll").val();
+}
+*/
+
 function updateDirectorioMunicipio() {
 	var str = "";
+	//var territorialUnit = $("#comboFiltroUnidadTerritorial").val();
 	var territorialUnit = "A";
 	for (var i = 65; i <= 90; i++) {
 		var item = String.fromCharCode(i);
@@ -952,6 +1016,13 @@ function updateListMunicipio(newFirstLetter, isInitializing) {
 		for (j = columnNumber; j <= 4; j++) {
 			$("#dondeMunicipioType" + numberOfColumns + "_" + j).html("");
 		}
+
+		/*
+		if (is8ColumnLetter(newFirstLetter)) {
+			aux = $('#bxslider_municipio').bxSlider({"controls": false});
+			eval("slider_municipio" + newFirstLetter + " = aux;"); 
+		}
+		*/
 	}
 
 	previousFirstLetterSelected = newFirstLetter;
@@ -974,6 +1045,22 @@ function is8ColumnLetter(character) {
 }
 
 function alertDialogModal(txt, title) {
+				/*
+	dialogLog = $('<div></div>')
+		.html(txt)
+		.dialog({
+			autoOpen: true,
+			buttons: {
+				Ok: function() {
+					$( this ).dialog( "close" );
+				}
+			},
+			closeOnEscape: false,
+			open: function(event, ui) { $(".ui-dialog-titlebar-close").hide(); },
+			title: title,
+			modal: true,
+			width: "300"
+		});*/
 
 				alert(txt)
 }
