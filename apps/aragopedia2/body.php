@@ -49,7 +49,7 @@
 					<div class="cabecera titulosSecundariosNegritas">CUÁNDO</div>
 					<div class="option" id="cuandoOption" onclick="javascript:activateOption('cuando');">
 						<div class="optionResumen optionOneLine elipsis " id="cuandoOptionResumen">
-							1996 - 2019
+							1996 - 2020
 						</div>
 						<div class="optionDetalle oculto" id="cuandoOptionDetalle">
 							<div class="optionDetalleTexto" id="cuandoOptionDetalleTexto"></div>
@@ -546,12 +546,13 @@
 								<option value="2017">2017</option>
 								<option value="2018">2018</option>
 								<option value="2019">2019</option>
+								<option value="2020">2020</option>
 							</select>
 						</li>
 						<li>
 							<div class="headText">Hasta</div>
 							<select id="cuandoHastaYear" class="comboFiltro comboFiltroSmall">
-								<option value="1996" selected="">1996</option>
+								<option value="1996">1996</option>
 								<option value="1997">1997</option>
 								<option value="1998">1998</option>
 								<option value="1999">1999</option>
@@ -574,18 +575,19 @@
 								<option value="2016">2016</option>
 								<option value="2017">2017</option>
 								<option value="2018">2018</option>
-								<option value="2019" selected>2019</option>
+								<option value="2019">2019</option>
+								<option value="2020" selected>2020</option>
 							</select>
 						</li>
 					</ul>
 					<ul class="cuandoOpciones textosNormales">
 						<li class="cuandoOpcion">
 							<a href="javascript:selectAllAvailableYears()" title="Todos los datos" class="i_i">Todos los datos</a>
-							<div id="cuandoAllYears" class="i_i">(1996 - 2019)</div>
+							<div id="cuandoAllYears" class="i_i">(1996 - 2020)</div>
 						</li>
 						<li class="cuandoOpcion">
 							<a href="javascript:selectLastAvailableYear()" title="El &uacute;ltimo a&ntilde;o disponible" class="i_i">El &uacute;ltimo a&ntilde;o disponible</a>
-							<div id="cuandoLastYear" class="i_i">(2019)</div>
+							<div id="cuandoLastYear" class="i_i">(2020)</div>
 						</li>
 					</ul>
 				</div>
