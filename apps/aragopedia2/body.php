@@ -49,7 +49,7 @@
 					<div class="cabecera titulosSecundariosNegritas">CUÁNDO</div>
 					<div class="option" id="cuandoOption" onclick="javascript:activateOption('cuando');">
 						<div class="optionResumen optionOneLine elipsis " id="cuandoOptionResumen">
-							1996 - 2020
+							1996 - 2021
 						</div>
 						<div class="optionDetalle oculto" id="cuandoOptionDetalle">
 							<div class="optionDetalleTexto" id="cuandoOptionDetalleTexto"></div>
@@ -547,6 +547,7 @@
 								<option value="2018">2018</option>
 								<option value="2019">2019</option>
 								<option value="2020">2020</option>
+								<option value="2021">2021</option>
 							</select>
 						</li>
 						<li>
@@ -576,18 +577,19 @@
 								<option value="2017">2017</option>
 								<option value="2018">2018</option>
 								<option value="2019">2019</option>
-								<option value="2020" selected>2020</option>
+								<option value="2020">2020</option>
+								<option value="2021" selected>2021</option>
 							</select>
 						</li>
 					</ul>
 					<ul class="cuandoOpciones textosNormales">
 						<li class="cuandoOpcion">
 							<a href="javascript:selectAllAvailableYears()" title="Todos los datos" class="i_i">Todos los datos</a>
-							<div id="cuandoAllYears" class="i_i">(1996 - 2020)</div>
+							<div id="cuandoAllYears" class="i_i">(1996 - 2021)</div>
 						</li>
 						<li class="cuandoOpcion">
 							<a href="javascript:selectLastAvailableYear()" title="El &uacute;ltimo a&ntilde;o disponible" class="i_i">El &uacute;ltimo a&ntilde;o disponible</a>
-							<div id="cuandoLastYear" class="i_i">(2020)</div>
+							<div id="cuandoLastYear" class="i_i">(2021)</div>
 						</li>
 					</ul>
 				</div>
